@@ -8,15 +8,15 @@ export const FeedbackProvider = ({ children }) => {
         {
             id: 1,
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-            rating: 10
+            rating: 8
         },
         {
-            id: 1,
+            id: 2,
             text: 'This is Feedback 2',
-            rating: 10
+            rating: 9
         },
         {
-            id: 1,
+            id: 3,
             text: 'The third feedback is here',
             rating: 10
         },
