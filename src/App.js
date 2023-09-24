@@ -7,6 +7,7 @@ import FeedbackData from "./Data/FeedbackData";
 import FeedbackStats from "./Components/FeedbackStats";
 import FeedbackForm from "./Components/FeedbackForm";
 import AboutPage from "./Pages/AboutPage";
+import AboutIconLink from "./Components/AboutIconLink";
 
 function App() {
     const [feedback, setFeedback] = useState(FeedbackData);
@@ -28,7 +29,7 @@ function App() {
     return (
         <Router>
             <Header />
-            <div className={"container"}>
+            <div className="container">
                 <Routes>
                     <Route exact path="/" element={
                         <>
@@ -41,6 +42,7 @@ function App() {
 
                     <Route path="/about" element={<AboutPage />} />
                 </Routes>
+                <AboutIconLink />
             </div>
         </Router>
     );
