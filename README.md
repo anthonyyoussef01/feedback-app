@@ -45,6 +45,42 @@ The `FeedbackItem` component displays individual feedback items within a card. I
 
 The `RatingSelect` component displays a radio button group for selecting a rating. It allows users to choose a rating from 1 to 10 and updates the selected rating in the state. The `FeedbackEdit` context is used to synchronize the selected rating when in edit mode.
 
+## AboutPage Component (AboutPage.js)
+
+The `AboutPage` component is responsible for rendering the about page of the application. It uses the `Card` component for styling. Here's an overview of its functionality:
+
+- It displays information about the project, including a title, description, and a link to return to the home page.
+- The project description emphasizes the use of React, React Router, and Framer Motion.
+- It utilizes the `Link` component from `react-router-dom` to create a link back to the home page ("/").
+
+## Header Component (Header.js)
+
+The `Header` component is responsible for rendering the application's header section. It accepts props like `text`, `bgColor`, and `textColor` for customization. Here's an explanation of its functionality:
+
+- It uses inline CSS to apply styles to the header, including background color and text color.
+- The header is enclosed within a `div` with the class "container" for consistent styling.
+- It displays the `text` prop as the header title.
+- Default values are provided for `text`, `bgColor`, and `textColor`, but they can be overridden by passing props.
+
+## FeedbackStats Component (FeedbackStats.js)
+
+The `FeedbackStats` component is responsible for displaying statistics about the feedback data. Here's an overview of its functionality:
+
+- It uses the `FeedbackContext` to access the `feedback` data.
+- It calculates the average rating by iterating through the feedback data using the `reduce` function. The average is then rounded to one decimal place.
+- The component displays the total number of reviews and the average rating.
+
+## FeedbackList Component (FeedbackList.js)
+
+The `FeedbackList` component is responsible for rendering a list of feedback items with animations. Here's an explanation of its functionality:
+
+- It uses the `FeedbackContext` to access the `feedback` data.
+- If there is no feedback data or it's empty, it displays a message indicating "No feedback items."
+- When there is feedback data, it uses Framer Motion for animation effects.
+- Feedback items are wrapped in a `motion.div` element with initial, animate, and exit animations.
+- Each feedback item is rendered using the `FeedbackItem` component.
+- There is also a commented-out version without animations for reference.
+
 ---
 
 This explanation provides an overview of the key components and functionality within the Feedback App project. For detailed implementation and code, refer to the respective component files.
