@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Feedback App Explanation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The website created from this source code is hosted at [https://master--chic-hotteok-a293f4.netlify.app/](https://master--chic-hotteok-a293f4.netlify.app/). This document provides an explanation of the components and code snippets used in the Feedback App project.
 
-## Available Scripts
+## App Component (App.js)
 
-In the project directory, you can run:
+The `App` component serves as the main entry point of the application. It utilizes the React Router for navigation and provides the layout structure for the different pages and components. Here's an overview of its structure:
 
-### `npm start`
+- It wraps the entire application in a `FeedbackProvider` context provider to manage feedback data and state.
+- It includes a `Router` component for setting up routing in the application.
+- The `Header` component is rendered at the top of every page.
+- The main content is enclosed within a `div` with a class of "container".
+- The `Routes` component defines the routes for different pages:
+    - The home page ("/") displays the `FeedbackForm`, `FeedbackStats`, `FeedbackList`, and an `AboutIconLink`.
+    - The "/about" route displays the `AboutPage`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## FeedbackForm Component (FeedbackForm.js)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The `FeedbackForm` component is responsible for gathering and submitting feedback. Key features and functionality include:
 
-### `npm test`
+- It manages the state for `text`, `rating`, `btnDisabled`, and `message`.
+- Utilizes the `FeedbackContext` to access functions like `addFeedback`, `updateFeedback`, and `feedbackEdit`.
+- Allows users to enter feedback text and select a rating using a `RatingSelect` component.
+- Validates user input, enabling/disabling the submission button based on input length and displays error messages.
+- Handles both adding new feedback and updating existing feedback when in edit mode.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## AboutIconLink Component (AboutIconLink.js)
 
-### `npm run build`
+The `AboutIconLink` component is a simple component that renders a link to the "/about" page. It utilizes the `react-router-dom` library for routing and displays a question mark icon (using `react-icons/fa`) as a clickable link.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## FeedbackContext and FeedbackProvider (FeedbackContext.js)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `FeedbackContext` is created using the `createContext` function from React. It defines the context that provides feedback-related data and functions to the components.
+- `FeedbackProvider` is a component that wraps the entire application with the `FeedbackContext.Provider`. It initializes and manages the feedback data and provides functions like `addFeedback`, `deleteFeedback`, `editFeedback`, and `updateFeedback` to its children components.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Card Component (Card.js)
 
-### `npm run eject`
+The `Card` component is a styled component that wraps content with a card-like appearance. It takes the `children` prop to render content within the card. It also accepts an optional `reverse` prop that can be used to change the card's appearance.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## FeedbackItem Component (FeedbackItem.js)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The `FeedbackItem` component displays individual feedback items within a card. It uses icons from `react-icons/fa` for delete and edit actions. It utilizes the `FeedbackContext` to access the `deleteFeedback` and `editFeedback` functions.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## RatingSelect Component (RatingSelect.js)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The `RatingSelect` component displays a radio button group for selecting a rating. It allows users to choose a rating from 1 to 10 and updates the selected rating in the state. The `FeedbackEdit` context is used to synchronize the selected rating when in edit mode.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This explanation provides an overview of the key components and functionality within the Feedback App project. For detailed implementation and code, refer to the respective component files.
