@@ -1,6 +1,6 @@
 # Feedback App Explanation
 
-The website created from this source code is hosted at [https://master--chic-hotteok-a293f4.netlify.app/](https://master--chic-hotteok-a293f4.netlify.app/). This document provides an explanation of the components and code snippets used in the Feedback App project.
+The website created from this source code is hosted at [https://master--chic-hotteok-a293f4.netlify.app/](https://master--chic-hotteok-a293f4.netlify.app/) (only up to commit [f67d210ffcbcf12044fd46568b53413357488e08](https://github.com/anthonyyoussef01/feedback-app/commit/f67d210ffcbcf12044fd46568b53413357488e08)). This document provides an explanation of the components and code snippets used in the Feedback App project.
 
 ## App Component (App.js)
 
